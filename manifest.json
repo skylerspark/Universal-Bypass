@@ -8,9 +8,9 @@
 		"512": "icon/512.png"
 	},
 	"default_locale": "en",
-	"name": "Universal Bypass",
+	"name": "UB",
 	"description": "__MSG_appDesc__",
-	"homepage_url": "https://universal-bypass.org/",
+	"homepage_url": "",
 	"version": "13.11.1",
 	"author": "Sainan.de",
 	"permissions": [
@@ -52,8 +52,8 @@
 	],
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "{8f4fa810-9c36-4b81-8e72-de97c8f29d67}",
-			"update_url": "https://universal-bypass.org/firefox/updates.json"
+			"id": "{5f4ga810-9c36-bb61-89e2-de97c8f9g267}",
+			"update_url": ""
 		}
 	},
 	"web_accessible_resources": [
