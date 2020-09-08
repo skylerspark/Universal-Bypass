@@ -10,7 +10,7 @@
 	"default_locale": "en",
 	"name": "UB",
 	"description": "__MSG_appDesc__",
-	"homepage_url": "",
+	"homepage_url": "https://google.com",
 	"version": "13.11.1",
 	"author": "Sainan.de",
 	"permissions": [
@@ -50,12 +50,6 @@
 			"run_at": "document_start"
 		}
 	],
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "{5f4ga810-9c36-bb61-89e2-de97c8f9g267}",
-			"update_url": ""
-		}
-	},
 	"web_accessible_resources": [
 		"html/before-navigate.html",
 		"html/blocked.html",
