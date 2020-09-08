@@ -74,21 +74,6 @@
 	"contributors": {
 		"message": "Contribuidores"
 	},
-	"legalBattleInfo1": {
-		"message": "Linkvertise quer processar a Universal Bypass"
-	},
-	"legalBattleInfo2": {
-		"message": "Se gostarem desta extensão, ajudem-me a combater o bom combate."
-	},
-	"legalBattleInfo3": {
-		"message": "Se quiser saber mais sobre este assunto, "
-	},
-	"legalBattleInfo4": {
-		"message": " aqui ficam mais algumas informações"
-	},
-	"legalBattleInfo5": {
-		"message": " (o material jurídico está em alemão).\n"
-	},
 	"optionsUserscripts": {
 		"message": "Bypasses Personalizados"
 	},
@@ -121,6 +106,9 @@
 	},
 	"beforeNavigateInstant": {
 		"message": "Você será navegado até %."
+	},
+	"infoLinkvertise": {
+		"message": "Não nos é permitido contornar este site, mas negociámos a eliminação dos seus passos mais incómodos."
 	},
 	"infoFileHoster": {
 		"message": "Infelizmente, o servidor de download irá garantir que você esperou antes de permitir que você faça o download do arquivo."

@@ -74,21 +74,6 @@
 	"contributors": {
 		"message": "貢獻者"
 	},
-	"legalBattleInfo1": {
-		"message": "Linkvertise 想要控告 Universal Bypass。"
-	},
-	"legalBattleInfo2": {
-		"message": "如果你喜歡這個擴充功能，就幫我一起奮戰吧。"
-	},
-	"legalBattleInfo3": {
-		"message": "如果你想知道更多，"
-	},
-	"legalBattleInfo4": {
-		"message": "這裡有更多資訊"
-	},
-	"legalBattleInfo5": {
-		"message": "(法律內容是德文)"
-	},
 	"optionsUserscripts": {
 		"message": "自定義繞過規則"
 	},
@@ -122,6 +107,9 @@
 	"beforeNavigateInstant": {
 		"message": "您正在導航到%"
 	},
+	"infoLinkvertise": {
+		"message": "我們不受允許直接繞過這個網頁，不過我們已通過談判能夠移除這個網頁最麻煩的步驟了。"
+	},
 	"infoFileHoster": {
 		"message": "很不幸，下載伺服器需要確保您在下載檔案前已等候"
 	},
@@ -129,7 +117,7 @@
 		"message": "此網站被更新版本的 Universal Bypass 繞過了。"
 	},
 	"crowdWait": {
-		"message": "很遺憾的，您是第一個遇到這個連結的人，但在您等候了以後，其他 Universal Bypass 的用戶就不用受苦了。"
+		"message": "很遺憾地，您是第一個遇到這個連結的人，但在您等候了以後，其他 Universal Bypass 的用戶就不用受苦了。"
 	},
 	"crowdDisabled": {
 		"message": "這個網站是以用戶提供的連結繞過，而此功能已被您在設定中關閉。"
@@ -159,7 +147,7 @@
 		"message": "該資訊有誤嗎?"
 	},
 	"crowdBypassedOptions": {
-		"message": "您希望立刻或是幾秒後被重新導向嗎？"
+		"message": "您希望立刻或是幾秒後以新分頁開啟嗎？"
 	},
 	"blockedTitle": {
 		"message": "Universal Bypass 防止您的IP被記錄。"

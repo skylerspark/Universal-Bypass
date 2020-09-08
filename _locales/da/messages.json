@@ -60,7 +60,7 @@
 		"message": "Blokér IP-loggere, hvis de ikke kan omgås."
 	},
 	"optionsCrowdBypass": {
-		"message": "Giv og tag destinationerne fra uomgåelige afkortere."
+		"message": "Masseomgåelse. Giv og tag destinationerne fra uomgåelige afkortere."
 	},
 	"optionsCrowdAutoOpen": {
 		"message": "Åbn crowd-sourced destinationer i en ny fane efter % sekund(er)."
@@ -106,6 +106,9 @@
 	},
 	"beforeNavigateInstant": {
 		"message": "Du videreføres til %"
+	},
+	"infoLinkvertise": {
+		"message": "Vi har ikke tilladelse til at omgå dette websted, men det er lykkedes at opnå fjernelse af dets mest irriterende trin."
 	},
 	"infoFileHoster": {
 		"message": "Bemærk: Downloadserveren tvinger dig til at vente et øjeblik, inden filen kan downloades."

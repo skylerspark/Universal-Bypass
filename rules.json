@@ -6,6 +6,9 @@
 	"path_s_encoded": [
 		"*://*.gslink.co/e/*/s/*"
 	],
+	"path_r_base64": [
+		"*://*.linkspy.cc/r/*"
+	],
 	"path_dl_base64": [
 		"*://*.k2nblog.com/dl/*",
 		"*://*.filekita.me/page/dl/*"
@@ -19,7 +22,8 @@
 		"*://*.hidereferrer.com/?*"
 	],
 	"query_base64": [
-		"*://*.hikarinoakariost.info/out/?*"
+		"*://*.hikarinoakariost.info/out/?*",
+		"*://*.p3dm.ru/download-en.html?*"
 	],
 	"hash_base64": [
 		"*://*.acorme.com/*"
@@ -49,7 +53,9 @@
 		"*://*.steamcommunity.com/linkfilter/?url=*",
 		"*://*.creditcable.info/*/*?*",
 		"*://*.adfoc.us/serve/sitelinks/?*",
-		"*://*.made-by.org/redirection/?url=*"
+		"*://*.made-by.org/redirection/?url=*",
+		"*://*.itsbx.com/redirect/?url=*",
+		"*://*.forocoches.com/link.php?url=*"
 	],
 	"param_xurl_raw_http": [
 		"*://bluemediafiles.com/*?xurl=*"
@@ -70,7 +76,8 @@
 	"param_link_base64": [
 		"*://*.leechpremium.link/cheat/?link=*",
 		"*://*.bdzone.xyz/cheat.php?link=*",
-		"*://*.extramovies.casa/download.php?name=*&link=*"
+		"*://*.extramovies.casa/download.php?name=*&link=*",
+		"*://*.gilakerja.com/*/?link=*"
 	],
 	"param_link_encoded_base64": [
 		"*://*.safelinkgratis.info/*?link=*"
@@ -85,19 +92,10 @@
 		"*://hightech.web.id/*?*=*"
 	],
 	"param_r_base64": [
-		"*://*.linkvertise.com/*?r=*",
-		"*://*.linkvertise.net/*?r=*",
-		"*://*.link-to.net/*?r=*",
 		"*://*/?r=*",
 		"*://*/api?r=*",
 		"*://*/api/?r=*"
 	],
-	"linkvertise_safe_in": {
-		"20540": 90,
-		"22792": 15,
-		"48331": 90,
-		"86430": 15
-	},
 	"param_kareeI_base64_pipes": [
 		"*://*.blogspot.com/?kareeI=*"
 	],
@@ -119,7 +117,8 @@
 		"*://*.k2nblog.com/gotothedl.html?url=*",
 		"*://*.novicearea.com/*/?url=*",
 		"*://*.dikatekno.com/go/?url=*",
-		"*://*.blackmod.net/dl/?url=*"
+		"*://*.blackmod.net/dl/?url=*",
+		"*://*.hulblog.com/*/?url=*"
 	],
 	"param_id_base64": [
 		"*://*/p/*.html?id=*",
@@ -196,13 +195,30 @@
 		"*://*.shiroyasha.me/?go=*"
 	],
 	"param_to_base64": [
-		"*://*.beermoneyforum.com/redirect?*"
+		"*://*.beermoneyforum.com/redirect?*",
+		"*://*.instant-hack.to/redirect*?to=*"
+	],
+	"param_data_base64": [
+		"*://*.magersari.web.id/?*"
+	],
+	"bypass_clipboard": [
+		"*://*.intercelestial.com/?id=*"
 	],
 	"useragent_googlebot": [
-		"*://*.haaretz.co.il/*"
-	],
-	"useragent_iphone": [
-		"*://*.linkvertise.net/*"
+		"*://*.haaretz.co.il/*",
+		"*://*.ceesty.com/*",
+		"*://*.corneey.com/*",
+		"*://*.destyy.com/*",
+		"*://*.festyy.com/*",
+		"*://*.gestyy.com/*",
+		"*://*.sh.st/*",
+		"*://*.viid.me/*",
+		"*://*.clkmein.com/*",
+		"*://*.cllkme.com/*",
+		"*://*.jnw0.com/*",
+		"*://*.xiw34.com/*",
+		"*://*.clkme.me/*",
+		"*://*.wiid.me/*"
 	],
 	"useragent_chrome": [
 		"*://*.fluxteam.xyz/*"
@@ -240,33 +256,40 @@
 		"*://*.goodssh.com/user/links"
 	],
 	"tracker": [
-		"*://analytics.twitter.com/mob_idsync_click?*",
-		"*://*.great.social/*",
-		"*://*.send.digital/*",
-		"*://*.snipli.com/*",
-		"*://*.shortcm.li/*",
-		"*://*.page.link/*",
-		"*://*.go2l.ink/*",
-		"*://*.buff.ly/*",
-		"*://*.snip.li/*",
-		"*://*.hive.am/*",
-		"*://*.cutt.ly/*",
-		"*://*.tiny.ie/*",
-		"*://*.bit.ly/*",
-		"*://*.goo.gl/*",
-		"*://*.bit.do/*",
-		"*://*.t2m.io/*",
-		"*://*.dis.gd/*",
-		"*://*.zii.bz/*",
-		"*://*.plu.sh/*",
-		"*://*.b.link/*",
-		"*://*.po.st/*",
-		"*://*.ow.ly/*",
-		"*://*.is.gd/*",
-		"*://*.1b.yt/*",
+		"*://*.x.co/*",
 		"*://*.1w.tf/*",
+		"*://*.1b.yt/*",
+		"*://*.is.gd/*",
+		"*://*.ow.ly/*",
+		"*://*.po.st/*",
+		"*://*.b.link/*",
+		"*://*.plu.sh/*",
+		"*://*.zii.bz/*",
+		"*://*.dis.gd/*",
+		"*://*.t2m.io/*",
+		"*://*.bit.do/*",
+		"*://*.goo.gl/*",
+		"*://*.bit.ly/*",
+		"*://*.tiny.ie/*",
+		"*://*.cutt.ly/*",
+		"*://*.hive.am/*",
+		"*://*.snip.li/*",
+		"*://*.buff.ly/*",
+		"*://*.go2l.ink/*",
+		"*://*.page.link/*",
+		"*://*.shortcm.li/*",
+		"*://*.snipli.com/*",
+		"*://*.send.digital/*",
+		"*://*.great.social/*",
 		"*://*.t.co/*",
-		"*://*.x.co/*"
+		"*://analytics.twitter.com/mob_idsync_click?*",
+		"*://click.linksynergy.com/link?*",
+		"*://click.linksynergy.com/deeplink?*",
+		"*://track.flexlinkspro.com/a.ashx?*",
+		"*://shareasale.com/r.cfm?*",
+		"*://shareasale-analytics.com/r.cfm?*",
+		"*://r20.rs6.net/tn.jsp?*",
+		"*://ay.link/i/*"
 	],
 	"ip_logger": [
 		"*://*.viral.over-blog.com/*",
@@ -305,6 +328,8 @@
 		"*://*.blasze.com/*",
 		"*://*.blasze.tk/*",
 		"*://*.ipgrab.org/*",
-		"*://*.gyazos.com/*"
-	]
+		"*://*.gyazos.com/*",
+		"*://*.discord.kim/*"
+	],
+	"linkvertise_safe_in": {}
 }

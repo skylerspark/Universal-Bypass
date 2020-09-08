@@ -58,7 +58,7 @@ brws.runtime.setUninstallURL("https://docs.google.com/forms/d/e/1FAIpQLSdXw-Yf5I
 
 // Keeping track of options
 var bypassCounter=0,enabled=true,instantNavigation=true,trackerBypassEnabled=true,instantNavigationTrackers=false,blockIPLoggers=true,crowdEnabled=true,userScript=""
-brws.storage.sync.get(["disable","navigation_delay","no_tracker_bypass","no_instant_navigation_trackers","allow_ip_loggers","crowd_bypass_opt_out","crowd_open_delay","crowd_close_delay","no_info_box"],res=>{
+brws.storage.sync.get(["disable","navigation_delay","no_tracker_bypass","no_instant_navigation_trackers","allow_ip_loggers","crowd_bypass","crowd_bypass_opt_out","crowd_open_delay","crowd_close_delay","no_info_box"],res=>{
 	if(res)
 	{
 		enabled=(!res.disable||res.disable!=="true")
@@ -87,16 +87,20 @@ brws.storage.sync.get(["disable","navigation_delay","no_tracker_bypass","no_inst
 		trackerBypassEnabled=(res.no_tracker_bypass!=="true")
 		instantNavigationTrackers=(res.no_instant_navigation_trackers!=="true")
 		blockIPLoggers=(res.allow_ip_loggers!=="true")
-		if(res.crowd_bypass_opt_out)
+		if(res.crowd_bypass)
 		{
-			crowdEnabled=(res.crowd_bypass_opt_out!=="true")
+			crowdEnabled=(res.crowd_bypass==="true")
 		}
 		else
 		{
-			crowdEnabled=!firefox
-			if(firefox)
+			crowdEnabled=(res.crowd_bypass_opt_out==="false"||!firefox)
+			if(crowdEnabled)
 			{
-				brws.storage.sync.set({crowd_bypass_opt_out:"true"})
+				brws.storage.sync.set({crowd_bypass:"true"})
+			}
+			if(res.crowd_bypass_opt_out)
+			{
+				brws.storage.sync.remove(["crowd_bypass_opt_out"])
 			}
 		}
 		if(!res.crowd_open_delay||res.crowd_open_delay==61)
@@ -154,9 +158,9 @@ brws.storage.onChanged.addListener(changes=>{
 	{
 		blockIPLoggers=(changes.allow_ip_loggers.newValue!=="true")
 	}
-	if(changes.crowd_bypass_opt_out)
+	if(changes.crowd_bypass)
 	{
-		crowdEnabled=(changes.crowd_bypass_opt_out.newValue!=="true")
+		crowdEnabled=(changes.crowd_bypass.newValue==="true")
 	}
 	if(changes.userscript)
 	{
@@ -166,7 +170,7 @@ brws.storage.onChanged.addListener(changes=>{
 })
 
 // Bypass definition management
-let updateStatus = "", injectionScript = "", preflightRules = {}, upstreamInjectionScript = "", upstreamCommit, channel = {}, optionsTab, optionsPort
+let updateStatus = "", injectionScript = "", preflightRules = {}, upstreamInjectionScript = "", upstreamCommit, channel = {}, optionsTab, optionsPort, bypassClipboard = ""
 const updateBypassDefinitions = callback => {
 	if(updateStatus != "")
 	{
@@ -181,7 +185,7 @@ const updateBypassDefinitions = callback => {
 	const finishDownload = () => {
 		channel = {}
 		let uniqueness = []
-		;["stop_watching","count_it","crowd_referer","crowd_path","crowd_query","crowd_queried","crowd_contribute","adlinkfly_info","adlinkfly_target"].forEach(name => {
+		;["stop_watching","count_it","crowd_referer","crowd_path","crowd_query","crowd_queried","crowd_contribute","adlinkfly_info","adlinkfly_target","bypass_clipboard"].forEach(name => {
 			let val
 			do
 			{
@@ -191,7 +195,7 @@ const updateBypassDefinitions = callback => {
 			uniqueness.push(val)
 			upstreamInjectionScript = upstreamInjectionScript.split("{{channel."+name+"}}").join(channel[name] = "data-" + val)
 		})
-		;["infoFileHoster","infoOutdated","crowdWait","crowdDisabled"].forEach(name => {
+		;["infoLinkvertise","infoFileHoster","infoOutdated","crowdWait","crowdDisabled"].forEach(name => {
 			upstreamInjectionScript = upstreamInjectionScript.split("{{msg."+name+"}}").join(brws.i18n.getMessage(name).split("\\").join("\\\\").split("\"").join("\\\""))
 		})
 		upstreamInjectionScript = upstreamInjectionScript.split("{{icon/48.png}}").join(brws.runtime.getURL("icon/48.png"))
@@ -290,7 +294,7 @@ refreshInjectionScript = () => {
 	if(enabled)
 	{
 		injectionScript = (upstreamInjectionScript + "\n" + userScript)
-		.split("UNIVERSAL_BYPASS_INTERNAL_VERSION").join("8")
+		.split("UNIVERSAL_BYPASS_INTERNAL_VERSION").join("9")
 		.split("UNIVERSAL_BYPASS_EXTERNAL_VERSION").join(extension_version)
 		.split("UNIVERSAL_BYPASS_INJECTION_VERSION").join(upstreamCommit?upstreamCommit.substr(0,7):"dev")
 		Object.keys(preflightRules).forEach(name=>{
@@ -318,10 +322,7 @@ sendToOptions = data => {
 if(!definitions_version)
 {
 	brws.alarms.create("update-bypass-definitions", {periodInMinutes: 60})
-	brws.alarms.onAlarm.addListener(alert => {
-		console.assert(alert.name == "update-bypass-definitions")
-		updateBypassDefinitions()
-	})
+	brws.alarms.onAlarm.addListener(()=>updateBypassDefinitions())
 }
 
 // Messaging
@@ -358,6 +359,10 @@ brws.runtime.onMessage.addListener((req, sender, respond) => {
 		{
 			console.warn("Unexpected message:", req)
 		}
+		break;
+		
+		case "bypass-clipboard":
+		bypassClipboard=req.data
 		break;
 
 		default:
@@ -526,6 +531,7 @@ function resolveRedirect(url)
 const onBeforeRequest_rules = {
 	path_base64: details => getRedirect(atob(details.url.substr(details.url.indexOf("aHR0c")))),
 	path_s_encoded: details => encodedRedirect(details.url.substr(details.url.indexOf("/s/")+3)),
+	path_r_base64: details => getRedirect(atob(details.url.substr(details.url.indexOf("/r/")+3))),
 	path_dl_base64: details => getRedirect(atob(details.url.substr(details.url.indexOf("/dl/")+4))),
 	path_u_id_base64: details => {
 		let data=details.url.substr(details.url.indexOf("/u/")+3)
@@ -600,18 +606,7 @@ const onBeforeRequest_rules = {
 	param_link_encoded_base64: details => getRedirect(decodeURIComponent(atob(details.url.substr(details.url.indexOf("?link=")+6)))),
 	param_kesehatan_base64: details => getRedirect(atob(details.url.substr(details.url.indexOf("?kesehatan=")+11))),
 	param_wildcard_base64: details => getRedirect(atob(new URL(details.url).searchParams.values().next().value)),
-	param_r_base64: details => {
-		let id=new URL(details.url).pathname.split("/")[1],safe_in
-		for(let i in preflightRules.linkvertise_safe_in)
-		{
-			if(id==i)
-			{
-				safe_in=preflightRules.linkvertise_safe_in[i]
-				break
-			}
-		}
-		return getRedirect(atob(decodeURIComponent(details.url.substr(details.url.indexOf("?r=")+3))),0,safe_in)
-	},
+	param_r_base64: details => getRedirect(atob(decodeURIComponent(details.url.substr(details.url.indexOf("?r=")+3))),0,safe_in),
 	param_kareeI_base64_pipes: details => getRedirect(atob(details.url.substr(details.url.indexOf("?kareeI=")+8)).split("||")[0]),
 	param_cr_base64: details => {
 		let i=details.url.indexOf("cr=")
@@ -718,6 +713,18 @@ const onBeforeRequest_rules = {
 		{
 			return getRedirect(atob(url.searchParams.get("to")))
 		}
+	},
+	param_data_base64: details => {
+		let url=new URL(details.url)
+		if(url.searchParams.has("data"))
+		{
+			return getRedirect(atob(url.searchParams.get("data")))
+		}
+	},
+	bypass_clipboard: details => {
+		let url=details.url+bypassClipboard
+		bypassClipboard=""
+		return{redirectUrl:url}
 	},
 	tracker: details => {
 		if(trackerBypassEnabled&&new URL(details.url).pathname!="/")
@@ -888,7 +895,7 @@ brws.webRequest.onBeforeRequest.addListener(details=>{
 	}
 },{types:["main_frame"],urls:["*://*.surfsees.com/?*"]},["blocking"])
 
-// Ouo.io/press & lnk2.cc Crowd Bypass
+// Ouo.io/press / lnk2.cc / Cshort.org Crowd Bypass
 brws.webRequest.onHeadersReceived.addListener(details=>{
 	if(enabled&&crowdEnabled)
 	{
@@ -899,14 +906,15 @@ brws.webRequest.onHeadersReceived.addListener(details=>{
 			if(header.name.toLowerCase()=="location"&&isGoodLink(header.value))
 			{
 				let xhr=new XMLHttpRequest(),
-				domain=url.hostname
+				domain=url.hostname,path
 				if(domain=="ouo.press")
 				{
 					domain="ouo.io"
 				}
+				path=(domain=="cshort.org"?url.pathname.substr(1):url.pathname.split("/")[2])
 				xhr.open("POST","https://universal-bypass.org/crowd/contribute_v1",true)
 				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
-				xhr.send("domain="+domain+"&path="+encodeURIComponent(url.pathname.split("/")[2])+"&target="+encodeURIComponent(header.value))
+				xhr.send("domain="+domain+"&path="+encodeURIComponent(path)+"&target="+encodeURIComponent(header.value))
 				break
 			}
 		}
@@ -914,7 +922,8 @@ brws.webRequest.onHeadersReceived.addListener(details=>{
 },{types:["main_frame"],urls:[
 "*://*.ouo.io/*/*",
 "*://*.ouo.press/*/*",
-"*://*.lnk2.cc/*/*"
+"*://*.lnk2.cc/*/*",
+"*://*.cshort.org/*?u=*"
 ]},["blocking","responseHeaders"])
 
 // SoraLink Crowd Bypass

@@ -74,21 +74,6 @@
 	"contributors": {
 		"message": "Penyumbang-penyumbang"
 	},
-	"legalBattleInfo1": {
-		"message": "Linkvertise mahu menyaman Universal Bypass."
-	},
-	"legalBattleInfo2": {
-		"message": "Jika anda berminat dengan sambungan ini, bantu saya di dalam perlawanan ini."
-	},
-	"legalBattleInfo3": {
-		"message": "Jika anda berminat mengetahui lebih lanjut,"
-	},
-	"legalBattleInfo4": {
-		"message": "ini adalah beberapa maklumat"
-	},
-	"legalBattleInfo5": {
-		"message": "( maklumat undang-undang di dalam bahasa German)"
-	},
 	"optionsUserscripts": {
 		"message": "Pemintas kostum"
 	},
@@ -121,6 +106,9 @@
 	},
 	"beforeNavigateInstant": {
 		"message": "Anda sedang dinavigasi ke %"
+	},
+	"infoLinkvertise": {
+		"message": "Kami tidak dibenarkan untuk memintas laman web ini tetapi kami telah berbincang tentang penyisihan langkah-langkah mereka yang paling menjengkelkan. "
 	},
 	"infoFileHoster": {
 		"message": "Sayangnya, pelayan muatturun memastikan anda menunggu sebentar sebelum membenarkan anda memuatturun file."

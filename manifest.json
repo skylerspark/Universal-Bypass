@@ -8,11 +8,11 @@
 		"512": "icon/512.png"
 	},
 	"default_locale": "en",
-	"name": "UB",
+	"name": "Universal Bypass",
 	"description": "__MSG_appDesc__",
-	"homepage_url": "https://google.com",
-	"version": "13.11.1",
-	"author": "Sainan.de",
+	"homepage_url": "https://universal-bypass.org/",
+	"version": "13.13.1",
+	"author": "Sainan",
 	"permissions": [
 		"alarms",
 		"storage",

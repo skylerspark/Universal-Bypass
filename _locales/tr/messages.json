@@ -39,7 +39,7 @@
 		"message": "Universal Bypass'ı Destekleyin"
 	},
 	"options": {
-		"message": "Seçenekler"
+		"message": "Ayarlar"
 	},
 	"optionsLink": {
 		"message": "Universal Bypass'ın seçeneklerini değiştir."
@@ -74,21 +74,6 @@
 	"contributors": {
 		"message": "Katkıda bulunanlar"
 	},
-	"legalBattleInfo1": {
-		"message": "Linkvertise, Universal Bypasse dava açmak istiyor."
-	},
-	"legalBattleInfo2": {
-		"message": "Eğer bu uzantıyı seviyorsan, iyi savaşı savaşmama yardımcı ol."
-	},
-	"legalBattleInfo3": {
-		"message": "bunun hakkında daha fazla bilgi edinmek istersen,"
-	},
-	"legalBattleInfo4": {
-		"message": "burada daha fazla bilgi var:"
-	},
-	"legalBattleInfo5": {
-		"message": "(yasal şeyler Almancada)."
-	},
 	"optionsUserscripts": {
 		"message": "Özel Baypaslar"
 	},
@@ -121,6 +106,9 @@
 	},
 	"beforeNavigateInstant": {
 		"message": "% Adresine yönlendiriliyorsunuz"
+	},
+	"infoLinkvertise": {
+		"message": "Bu web sitesini atlamamıza izin verilmiyor, ancak en can sıkıcı adımlarının kaldırılması konusunda görüştük."
 	},
 	"infoFileHoster": {
 		"message": "İndirme sunucusu dosyayı indirmenize izin vermeden önce sizi biraz bekletecek."

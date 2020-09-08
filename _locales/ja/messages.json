@@ -18,7 +18,7 @@
 		"message": "変更履歴"
 	},
 	"update": {
-		"message": "アップデートを確認"
+		"message": "アップデートを確認する"
 	},
 	"updating": {
 		"message": "バイパス定義をダウンロードしています..."
@@ -33,7 +33,7 @@
 		"message": "よくある質問と回答(FAQ)"
 	},
 	"bypassCounter": {
-		"message": "Universal Bypassは今までに%件のサイトをバイパスしています。"
+		"message": "Universal Bypassは、いままでに%件のサイトをバイパスしました。"
 	},
 	"support": {
 		"message": "Universal Bypassに貢献する"
@@ -57,10 +57,10 @@
 		"message": "すぐにトラッカーのリンク先へ移動する"
 	},
 	"optionsBlockIPLoggers": {
-		"message": "バイパスできない場合はIPアドレスがログに記録されないように阻止する"
+		"message": "バイパスされなかった場合はIPアドレスがログされないように阻止する"
 	},
 	"optionsCrowdBypass": {
-		"message": "バイパスできない短縮URLへ移動したり提供できるようにする (Crowd Bypass)"
+		"message": "Crowd Bypass: バイパスできない短縮リンクの行き先を取得したり提供したりする"
 	},
 	"optionsCrowdAutoOpen": {
 		"message": "%秒後に新しいタブでクラウドソーシング先を開く"
@@ -74,35 +74,20 @@
 	"contributors": {
 		"message": "貢献者"
 	},
-	"legalBattleInfo1": {
-		"message": "Linkvertiseが、Universal Bypassを訴えようとしています。"
-	},
-	"legalBattleInfo2": {
-		"message": "もしこの拡張機能のことを気に入っているのであれば、戦いがうまくいくように手伝っていただけませんか?"
-	},
-	"legalBattleInfo3": {
-		"message": "これについての詳しい情報は、"
-	},
-	"legalBattleInfo4": {
-		"message": "ここにあります"
-	},
-	"legalBattleInfo5": {
-		"message": "(法的事項はドイツ語です)。"
-	},
 	"optionsUserscripts": {
 		"message": "カスタムバイパス"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "これは、開発者が独自のスクリプトを作成してサイトをバイパスするための高度な機能です。完成後、誰でも使えるように、GitHubに投稿してUniversal Bypassに追加することができます。"
+		"message": "これは、開発者が独自のスクリプトを作成してサイトをバイパスするための高度な機能です。完成後、誰でも使えるように、GitHubに投稿してUniversal Bypassに追加することもできます。"
 	},
 	"beforeNavigate": {
 		"message": "リンク先まであと少しです。"
 	},
 	"beforeNavigateDestination": {
-		"message": "リンク先: %"
+		"message": "リンク先は%"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "ただし、すぐに移動すると、サイトはUniversal Bypassを検出してしまいます。"
+		"message": "ただし、いま移動すると、サイトはUniversal Bypassを検出してしまいます。"
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "あと%秒で検出されなくなります。"
@@ -120,7 +105,10 @@
 		"message": "すぐに、または数秒後にリダイレクトされるようにしたいですか?"
 	},
 	"beforeNavigateInstant": {
-		"message": "% に移動しています"
+		"message": "%に移動しています"
+	},
+	"infoLinkvertise": {
+		"message": "このサイトのバイパスは許可されていませんが、私たちはこのサイトのもっとも迷惑な手順を除去するように交渉しました。"
 	},
 	"infoFileHoster": {
 		"message": "残念ながら、ダウンロードサーバーはファイルのダウンロードが許可される前に待機していることを確認します。"
@@ -132,7 +120,7 @@
 		"message": "残念ながら、あなたはこのリンクの最初のアクセス者です。しばらくすれば、他のUniversal Bypassユーザーが待つ必要はなくなります。"
 	},
 	"crowdDisabled": {
-		"message": "このサイトはCrowd Bypassを有効にしているときのみバイパスできますが、このオプションはオフになっています。"
+		"message": "このサイトは、Crowd Bypassを有効にしているときのみバイパスできます。オプションからこの設定をオンにすることができます。"
 	},
 	"crowdBypassed": {
 		"message": "もう待つ必要はありません!"
@@ -162,9 +150,9 @@
 		"message": "すぐに、または数秒後に新しいタブで開かれるようにしたいですか?"
 	},
 	"blockedTitle": {
-		"message": "Universal Bypassは、あなたのIPアドレスがログに記録されないように阻止しました。"
+		"message": "Universal Bypassは、あなたのIPアドレスがログされないように阻止しました。"
 	},
 	"blockedSubtitle": {
-		"message": "悪意のある人があなたのIPアドレスをログに記録できないようにする機能をオフにしたいですか?"
+		"message": "悪意のある人があなたのIPアドレスをログできないようにする機能をオフにしたいですか?"
 	}
 }

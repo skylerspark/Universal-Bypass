@@ -30,7 +30,7 @@
 		"message": "Bypasses ay updated."
 	},
 	"faq": {
-		"message": "Mga Madalas na Tanong"
+		"message": "Mga Madalas Itanong"
 	},
 	"bypassCounter": {
 		"message": "Ang Universal Bypass ay naka iwas ng % mga sites para lang sa iyo."
@@ -69,25 +69,10 @@
 		"message": "Isara ang tab na naglalaman ng crowd-sourced destination pagkatapos ng % segundo ng pagbisita ito."
 	},
 	"privacyPolicy": {
-		"message": "Patakaran sa Pagkapribado"
+		"message": "Pribadong seguridad"
 	},
 	"contributors": {
 		"message": "Ang mga kontribyutor"
-	},
-	"legalBattleInfo1": {
-		"message": "Nais ng Linkvertise na mag-demanda sa Universal Bypass."
-	},
-	"legalBattleInfo2": {
-		"message": "Kung gusto mo ang extension na ito, tulungan mo akong ipag laban ang demanda."
-	},
-	"legalBattleInfo3": {
-		"message": "Kung nais mong malaman ang higit pa tungkol dito"
-	},
-	"legalBattleInfo4": {
-		"message": "\nnarito ang ilang karagdagang impormasyon"
-	},
-	"legalBattleInfo5": {
-		"message": "ang batas ay nasa lingwahe ng German"
 	},
 	"optionsUserscripts": {
 		"message": "Pasadyang Mga Salamin"

@@ -1,6 +1,6 @@
 {
 	"appDesc": {
-		"message": "ඔබේ කාලය අපතේ නොයවන්න. Universal Bypass මගින් කරදරකාරී සබැඳි හැකිලීම් ඉක්මවා යයි."
+		"message": "ඔබේ කාලය අපතේ නොයවන්න. Universal Bypass මගින් කරදරකාරී link හැකිලීම් ඉක්මවා යයි."
 	},
 	"firstrunTitle": {
 		"message": "Universal Bypass ස්ථාපනය කරාට ඔබට ස්තුතියි!"
@@ -73,9 +73,6 @@
 	},
 	"contributors": {
 		"message": "දායකකරුවන්"
-	},
-	"legalBattleInfo1": {
-		"message": "Linkvertise මගින් Universal Bypassට එරෙහිව නීතිමය පියවර ගෙන ඇත."
 	},
 	"optionsUserscripts": {
 		"message": "ඔබගේ මගහැරීම්"
